@@ -9,7 +9,7 @@ from dukascopy public repository with command: mvn clean install
 	<groupId>com.dukascopy.dds2</groupId>
 	<artifactId>JForex-SDK</artifactId>
 	<version>2.21</version>
-	<name>DUKASCOPY client library</name>
+	<name>JForex Agent</name>
 	<description></description>
 	<organization>
 		<name>DUKASCOPY (Suisse) SA</name>
@@ -21,6 +21,10 @@ from dukascopy public repository with command: mvn clean install
 			<name>Dukascopy public repository</name>
 			<url>http://www.dukascopy.com/client/jforexlib/publicrepo/</url>
 		</repository>
+		<repository>
+		   <id>codehaus-snapshots</id>
+		   <url>http://snapshots.repository.codehaus.org</url>
+		</repository>
 	</repositories>
     <dependencies>
 		<dependency>
@@ -28,5 +32,10 @@ from dukascopy public repository with command: mvn clean install
 			<artifactId>DDS2-jClient-JForex</artifactId>
 			<version>2.21</version>
 		</dependency>
-	</dependencies>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+		    <artifactId>jackson-mapper-asl</artifactId>
+		    <version>1.9.11</version>
+	   </dependency>
+	</dependencies>	
 </project>

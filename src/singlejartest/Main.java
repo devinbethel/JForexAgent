@@ -58,10 +58,10 @@ public class Main {
     private static String password = "wenLL";
 
     public static void main(String[] args) throws Exception {
-        if (args != null && args.length > 1) {
-        	if ("on".equals(args[1])) {
+        if (args != null && args.length == 1) {
+        	if ("on".equals(args[0])) {
         		runOnlineStrategy();	
-        	} else if ("off".equals(args[1])) {
+        	} else if ("off".equals(args[0])) {
         		runOfflineStrategy();
         	}
         } 
@@ -74,7 +74,7 @@ public class Main {
 
 			if (offStrategy.getTickList() != null) {
 				for (ITick tick : offStrategy.getTickList()) {
-					offStrategy.onTick(null, tick);
+					offStrategy.onTick(Instrument.EURUSD, tick);
 				}
 			}
 			
