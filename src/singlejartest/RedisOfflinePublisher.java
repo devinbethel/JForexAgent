@@ -14,6 +14,7 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.Transaction;
 
 import com.dukascopy.api.IAccount;
 import com.dukascopy.api.IBar;
@@ -91,7 +92,11 @@ public class RedisOfflinePublisher implements IStrategy {
 			ObjectMapper mapper = new ObjectMapper();
 			mapper.getSerializationConfig().addMixInAnnotations(ITick.class, ITickMixin.class);
 			String json = mapper.writeValueAsString(tick);
-			jedis.zadd(instrument.toString(), tick.getTime(), json);
+
+			Transaction t = jedis.multi();			
+			//t.zadd(instrument.name(), tick.getTime(), json);						
+			t.publish(instrument.name(), json);
+			t.exec();
 			
 		} catch (JsonGenerationException e) {
 			e.printStackTrace();
