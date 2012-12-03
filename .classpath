@@ -20,6 +20,8 @@
 	<classpathentry kind="lib" path="libs"/>
 	<classpathentry kind="lib" path="libs/jedis-2.1.0.jar"/>
 	<classpathentry kind="lib" path="libs/commons-pool-1.6.jar"/>
+	<classpathentry kind="lib" path="libs/jackson-core-asl-1.9.11.jar"/>
+	<classpathentry kind="lib" path="libs/jackson-mapper-asl-1.9.11.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="D:/projects/workspace/JForexAgent/libs/jackson-core-asl-1.9.11.jar"/>
 	<classpathentry kind="lib" path="D:/projects/workspace/JForexAgent/libs/jackson-mapper-asl-1.9.11.jar"/>

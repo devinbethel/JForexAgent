@@ -53,9 +53,9 @@ public class Main {
     //url of the DEMO jnlp
     private static String jnlpUrl = "https://www.dukascopy.com/client/demo/jclient/jforex.jnlp";
     //user name
-    private static String userName = "DEMO10037wenLLEU";
+    private static String userName = "DEMO2fdDDK";
     //password
-    private static String password = "wenLL";
+    private static String password = "fdDDK";
 
     public static void main(String[] args) throws Exception {
         if (args != null && args.length == 1) {
@@ -161,7 +161,7 @@ public class Main {
         
         //start the strategy
         LOGGER.info("Starting strategy");
-        client.startStrategy(new MA_Play());
+        client.startStrategy(new RedisOnlinePublisher());
         //now it's running
 	}
 }

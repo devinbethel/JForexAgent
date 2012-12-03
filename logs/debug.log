@@ -1,1 +1,23 @@
 2012-11-21 16:30:47.815 INFO  singlejartest.Main - Connecting...
+2012-12-01 11:53:29.239 INFO  singlejartest.Main - Connecting...
+2012-12-01 11:53:30.787 INFO  com.dukascopy.api.impl.connect.AuthorizationClient - >> [https://www1.dukascopy.com/authorization/demo/auth?typus=0&munus=api&platform=JFOREXSDK&appello=DEMO2fdDDK&specialis=319FBA9297A787E24C5C1FD4CE2435F77BAAEE78&versio=206&sermo=7d1f4e7e-5281-457d-a1f7-9dd9ac9c15ea&willPing=true]
+2012-12-01 11:53:31.337 INFO  com.dukascopy.api.impl.connect.AuthorizationClient - << [d-ja-gva-61-167.dukascopy.com:10443@d-ja-usa-e-97-4-b.dukascopy.com:10443@d-ja-sgn-04-b.dukascopy.com:10443@d-ja-jpn-04-b.dukascopy.com:10443@22da15a43147905c99f170a1c6077b45a60743678d25429787425677af8af4aa]
+2012-12-01 11:53:32.188 INFO  com.dukascopy.api.impl.connect.AuthorizationClient - Best api url [d-ja-gva-61-167.dukascopy.com:10443] with time [66]
+2012-12-01 11:53:32.189 INFO  com.dukascopy.api.impl.connect.AuthorizationClient - >> [{}]https://www1.dukascopy.com/authorization/demo/auth?typus=0&munus=stngs&appello=DEMO2fdDDK&licentio=22da15a43147905c99f170a1c6077b45a60743678d25429787425677af8af4aa&sermo=7d1f4e7e-5281-457d-a1f7-9dd9ac9c15ea&stngs=1
+2012-12-01 11:53:32.973 INFO  com.dukascopy.api.impl.connect.AuthorizationClient - << [{}] Properties received
+2012-12-01 11:53:37.843 WARN  com.dukascopy.api.impl.connect.WLabelData - White Label Image is not received
+2012-12-01 11:53:38.317 INFO  singlejartest.Main - Connected
+2012-12-01 11:53:38.886 INFO  singlejartest.Main - Subscribing instruments...
+2012-12-01 11:53:43.888 INFO  singlejartest.Main - Starting strategy
+2012-12-01 11:53:44.195 INFO  singlejartest.Main - Strategy started: 47
+2012-12-01 12:23:58.955 INFO  singlejartest.Main - Connecting...
+2012-12-01 12:23:59.957 INFO  com.dukascopy.api.impl.connect.AuthorizationClient - >> [https://www1.dukascopy.com/authorization/demo/auth?typus=0&munus=api&platform=JFOREXSDK&appello=DEMO2fdDDK&specialis=319FBA9297A787E24C5C1FD4CE2435F77BAAEE78&versio=206&sermo=3dbc1db6-944a-4274-8079-f4e1148f0d29&willPing=true]
+2012-12-01 12:24:00.403 INFO  com.dukascopy.api.impl.connect.AuthorizationClient - << [d-ja-gva-91-191.dukascopy.com:10443@d-ja-usa-e-96-4-a.dukascopy.com:10443@d-ja-sgn-04-a.dukascopy.com:10443@d-ja-jpn-04-a.dukascopy.com:10443@cea4937d1b38fc30b7b611faec967cb22b3023eccee609a804b9e75ddfa967d3]
+2012-12-01 12:24:01.068 INFO  com.dukascopy.api.impl.connect.AuthorizationClient - Best api url [d-ja-gva-91-191.dukascopy.com:10443] with time [65]
+2012-12-01 12:24:01.068 INFO  com.dukascopy.api.impl.connect.AuthorizationClient - >> [{}]https://www1.dukascopy.com/authorization/demo/auth?typus=0&munus=stngs&appello=DEMO2fdDDK&licentio=cea4937d1b38fc30b7b611faec967cb22b3023eccee609a804b9e75ddfa967d3&sermo=3dbc1db6-944a-4274-8079-f4e1148f0d29&stngs=1
+2012-12-01 12:24:01.748 INFO  com.dukascopy.api.impl.connect.AuthorizationClient - << [{}] Properties received
+2012-12-01 12:24:04.633 WARN  com.dukascopy.api.impl.connect.WLabelData - White Label Image is not received
+2012-12-01 12:24:05.178 INFO  singlejartest.Main - Connected
+2012-12-01 12:24:05.649 INFO  singlejartest.Main - Subscribing instruments...
+2012-12-01 12:24:10.651 INFO  singlejartest.Main - Starting strategy
+2012-12-01 12:24:21.589 INFO  singlejartest.Main - Strategy started: 46

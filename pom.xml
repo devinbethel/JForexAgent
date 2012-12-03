@@ -16,6 +16,15 @@ from dukascopy public repository with command: mvn clean install
 		<url>http://www.dukascopy.com</url>
 	</organization>
 	<repositories>
+		 <repository>
+	      	<id>central</id>
+	      	<name>Maven Repository Switchboard</name>
+	      	<layout>default</layout>
+	      	<url>http://repo1.maven.org/maven2</url>
+	      	<snapshots>
+	        	<enabled>false</enabled>
+	      	</snapshots>
+	    </repository>
 		<repository>
 			<id>dc_public</id>
 			<name>Dukascopy public repository</name>
@@ -31,6 +40,13 @@ from dukascopy public repository with command: mvn clean install
 			<groupId>com.dukascopy.dds2</groupId>
 			<artifactId>DDS2-jClient-JForex</artifactId>
 			<version>2.21</version>
+		</dependency>
+		<dependency>
+		    <groupId>redis.clients</groupId>
+		    <artifactId>jedis</artifactId>
+		    <version>2.0.0</version>
+		    <type>jar</type>
+		    <scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
