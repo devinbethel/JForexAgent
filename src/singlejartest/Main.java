@@ -37,12 +37,12 @@ import org.slf4j.LoggerFactory;
 
 import com.dukascopy.api.ITick;
 import com.dukascopy.api.Instrument;
-import com.dukascopy.api.JFException;
 import com.dukascopy.api.system.ClientFactory;
 import com.dukascopy.api.system.IClient;
 import com.dukascopy.api.system.ISystemListener;
 import com.dukascopy.api.system.JFAuthenticationException;
 import com.dukascopy.api.system.JFVersionException;
+import com.sun.org.apache.bcel.internal.classfile.PMGClass;
 
 /**
  * This small program demonstrates how to initialize Dukascopy client and start a strategy
@@ -56,12 +56,19 @@ public class Main {
     private static String userName = "DEMO2fdDDK";
     //password
     private static String password = "fdDDK";
+    private static String onlineMode;
+    private static String graphType;
+    private static int exCount;
 
     public static void main(String[] args) throws Exception {
-        if (args != null && args.length == 1) {
-        	if ("on".equals(args[0])) {
-        		runOnlineStrategy();	
-        	} else if ("off".equals(args[0])) {
+        if (args != null) {
+        	onlineMode = args[0];
+        	graphType = args[1];
+        	exCount = (args.length == 3) ? Integer.parseInt(args[2]) : 100; 
+        			
+        	if ("on".equals(onlineMode)) {
+        		runOnlineStrategy();
+        	} else if ("off".equals(onlineMode)) {
         		runOfflineStrategy();
         	}
         } 
@@ -73,12 +80,19 @@ public class Main {
 			offStrategy.onStart(null);
 
 			if (offStrategy.getTickList() != null) {
+				int count = 0;
 				for (ITick tick : offStrategy.getTickList()) {
+					count++;									
 					offStrategy.onTick(Instrument.EURUSD, tick);
+					Thread.sleep(250);
+					
+					if (count == exCount) {
+						break;
+					}
 				}
 			}
 			
-    	} catch (JFException e) {
+    	} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

@@ -37,12 +37,16 @@ public class RedisOfflinePublisher implements IStrategy {
 	private List<ITick> tickList;
 	private Jedis jedis;
 
+	private static String[] CSV_FILES = new String[] {
+								"EURUSD_Ticks_15.11.2012-15.11.2012.csv", 
+								"EURUSD_Candlestick_1_h_BID_26.11.2012-27.11.2012.csv"
+							};
 	public void onStart(IContext context) throws JFException {
 		BufferedReader csvFile = null;
 		jedis = new Jedis("localhost");
 
 		try {
-			csvFile = new BufferedReader(new FileReader("data//EURUSD_Ticks_15.11.2012-15.11.2012.csv"));
+			csvFile = new BufferedReader(new FileReader("D://projects//JForexAgent//data//"));
 			String line;
 			tickList = new ArrayList<ITick>();
 
@@ -96,7 +100,7 @@ public class RedisOfflinePublisher implements IStrategy {
 			Transaction t = jedis.multi();			
 			//t.zadd(instrument.name(), tick.getTime(), json);						
 			t.publish(instrument.name(), json);
-			t.exec();
+			t.exec();			
 			
 		} catch (JsonGenerationException e) {
 			e.printStackTrace();

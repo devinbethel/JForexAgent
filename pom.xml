@@ -1,57 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-The following is an example Maven pom file which allows the user to 
-to build JForexClientLibrary by using the latest version of  dependencies 
-from dukascopy public repository with command: mvn clean install
--->
+<!-- The following is an example Maven pom file which allows the user to 
+	to build JForexClientLibrary by using the latest version of dependencies 
+	from dukascopy public repository with command: mvn clean install -->
 <project>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.dukascopy.dds2</groupId>
-	<artifactId>JForex-SDK</artifactId>
+	<artifactId>JForexAgent</artifactId>
 	<version>2.21</version>
 	<name>JForex Agent</name>
 	<description></description>
 	<organization>
 		<name>DUKASCOPY (Suisse) SA</name>
 		<url>http://www.dukascopy.com</url>
-	</organization>
+	</organization>	
 	<repositories>
-		 <repository>
-	      	<id>central</id>
-	      	<name>Maven Repository Switchboard</name>
-	      	<layout>default</layout>
-	      	<url>http://repo1.maven.org/maven2</url>
-	      	<snapshots>
-	        	<enabled>false</enabled>
-	      	</snapshots>
-	    </repository>
+		<repository>
+			<id>central</id>
+			<name>Maven Repository Switchboard</name>
+			<layout>default</layout>
+			<url>http://repo1.maven.org/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
 		<repository>
 			<id>dc_public</id>
 			<name>Dukascopy public repository</name>
 			<url>http://www.dukascopy.com/client/jforexlib/publicrepo/</url>
 		</repository>
 		<repository>
-		   <id>codehaus-snapshots</id>
-		   <url>http://snapshots.repository.codehaus.org</url>
+			<id>codehaus-snapshots</id>
+			<url>http://snapshots.repository.codehaus.org</url>
 		</repository>
 	</repositories>
-    <dependencies>
+	<dependencies>
 		<dependency>
 			<groupId>com.dukascopy.dds2</groupId>
 			<artifactId>DDS2-jClient-JForex</artifactId>
 			<version>2.21</version>
 		</dependency>
 		<dependency>
-		    <groupId>redis.clients</groupId>
-		    <artifactId>jedis</artifactId>
-		    <version>2.0.0</version>
-		    <type>jar</type>
-		    <scope>compile</scope>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.0.0</version>
+			<type>jar</type>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
-		    <artifactId>jackson-mapper-asl</artifactId>
-		    <version>1.9.11</version>
-	   </dependency>
-	</dependencies>	
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.11</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>singlejartest.Main</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
